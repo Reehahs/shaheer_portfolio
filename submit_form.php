@@ -1,4 +1,11 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'path/to/PHPMailer/src/Exception.php';
+require 'path/to/PHPMailer/src/PHPMailer.php';
+require 'path/to/PHPMailer/src/SMTP.php';
+
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Collect form data
@@ -17,23 +24,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Email details
-    $to = "shaheerkhan123p@gmail.com"; // Replace with your email address
-    $subject = "Someone reached out from your portfolio";
-    $email_body = "You have received a new message from your portfolio contact form.\n\n";
-    $email_body .= "Name: $name\n";
-    $email_body .= "Email: $email\n";
-    $email_body .= "Message:\n$message\n";
+    // Create a new PHPMailer instance
+    $mail = new PHPMailer(true);
 
-    // Email headers
-    $headers = "From: $name <$email>\r\n";
-    $headers .= "Reply-To: $email\r\n";
+    try {
+        // Server settings
+        $mail->isSMTP(); // Use SMTP
+        $mail->Host = 'smtp.gmail.com'; // SMTP server (e.g., smtp.gmail.com)
+        $mail->SMTPAuth = true; // Enable SMTP authentication
+        $mail->Username = 'tougemart@gmail.com'; // SMTP username
+        $mail->Password = 'Kiwismiwi123'; // SMTP password
+        $mail->SMTPSecure = 'tls'; // Enable TLS encryption
+        $mail->Port = 587; // TCP port to connect to
 
-    // Send the email
-    if (mail($to, $subject, $email_body, $headers)) {
+        // Recipients
+        $mail->setFrom($email, $name);
+        $mail->addAddress('shaheerkhan123p@gmail.com'); // Add a recipient
+
+        // Content
+        $mail->isHTML(false); // Set email format to plain text
+        $mail->Subject = 'New Contact Form Submission';
+        $mail->Body = "Name: $name\nEmail: $email\nMessage:\n$message";
+
+        // Send the email
+        $mail->send();
         header("Location: thank_you.html"); // Redirect to thank-you page
         exit;
-    } else {
-        echo "Failed to send message. Please try again later.";
+    } catch (Exception $e) {
+        echo "Failed to send message. Error: {$mail->ErrorInfo}";
     }
+} else {
+    echo "Invalid request method.";
+}
 ?>
