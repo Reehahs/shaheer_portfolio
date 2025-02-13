@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -6,56 +7,75 @@ body {
     background-color: #f4f4f4;
 }
 
-header {
+/* Navigation Bar */
+#navbar {
     background: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#navbar ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+#navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+#navbar ul li a:hover {
+    color: #ff6347; /* Change to your preferred hover color */
+}
+
+/* Header */
+header {
+    background: #444;
+    color: #fff;
+    padding: 100px 0;
     text-align: center;
 }
 
 header h1 {
     margin: 0;
+    font-size: 48px;
 }
 
-nav {
-    background: #444;
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
+header p {
+    font-size: 24px;
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
+/* Sections */
 .container {
     width: 80%;
     margin: auto;
     overflow: hidden;
-}
-
-section {
-    padding: 20px 0;
+    padding: 40px 0;
 }
 
 h2 {
     color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
+/* Portfolio Items */
 .portfolio-items {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .item {
@@ -64,6 +84,8 @@ h2 {
     margin: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
 }
 
 .item img {
@@ -71,9 +93,12 @@ h2 {
     height: auto;
 }
 
+/* Contact Form */
 form {
     display: flex;
     flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 form label {
@@ -94,16 +119,18 @@ form button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 form button:hover {
     background: #555;
 }
 
+/* Footer */
 footer {
     background: #333;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
+    padding: 20px 0;
+    margin-top: 40px;
 }
