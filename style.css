@@ -1,15 +1,16 @@
-/* General Styles */
+* General Styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f0f8ff; /* Light blue background */
+    color: #333;
 }
 
 /* Navigation Bar */
 #navbar {
-    background: #333;
+    background: #0073e6; /* Dark blue */
     color: #fff;
     padding: 10px 0;
     position: sticky;
@@ -36,16 +37,25 @@ body {
     transition: color 0.3s ease;
 }
 
+#navbar ul li a.active,
 #navbar ul li a:hover {
-    color: #ff6347; /* Change to your preferred hover color */
+    color: #ffd700; /* Gold color for active/hover */
 }
 
 /* Header */
 header {
-    background: #444;
+    background: #005bb5; /* Medium blue */
     color: #fff;
     padding: 100px 0;
     text-align: center;
+}
+
+header .profile img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    margin-bottom: 20px;
 }
 
 header h1 {
@@ -65,8 +75,16 @@ header p {
     padding: 40px 0;
 }
 
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
 h2 {
-    color: #333;
+    color: #0073e6; /* Dark blue */
     text-align: center;
     margin-bottom: 20px;
 }
@@ -114,7 +132,7 @@ form input, form textarea {
 
 form button {
     padding: 10px;
-    background: #333;
+    background: #0073e6; /* Dark blue */
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -123,12 +141,12 @@ form button {
 }
 
 form button:hover {
-    background: #555;
+    background: #005bb5; /* Medium blue */
 }
 
 /* Footer */
 footer {
-    background: #333;
+    background: #0073e6; /* Dark blue */
     color: #fff;
     text-align: center;
     padding: 20px 0;
