@@ -53,8 +53,8 @@ header {
 }
 
 header .profile img {
-    width: 120px; /* Smaller profile image */
-    height: 120px; /* Smaller profile image */
+    width: 150px; /* Smaller profile image */
+    height: 150px; /* Smaller profile image */
     border-radius: 50%;
     border: 5px solid #fff;
     margin-bottom: 20px;
@@ -64,11 +64,13 @@ header h1 {
     margin: 0;
     font-size: 48px;
     font-weight: bold;
+    color: #ffd700;
 }
 
 header p {
     font-size: 24px;
     margin: 10px 0 0;
+    color: black
 }
 
 /* Sections */
@@ -180,7 +182,7 @@ form button:hover {
 /* Footer */
 footer {
     background: #0073e6; /* Dark blue */
-    color: #fff;
+    color: #000000;
     text-align: center;
     padding: 20px 0;
     margin-top: 40px;
