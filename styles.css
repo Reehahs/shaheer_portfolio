@@ -4,19 +4,19 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #e6f7ff; /* Light blue background */
+    background: linear-gradient(135deg, #e6f7ff, #f0f8ff); /* Light blue gradient */
     color: #333;
 }
 
 /* Navigation Bar */
 #navbar {
-    background: #0073e6; /* Dark blue */
+    background: linear-gradient(135deg, #0073e6, #005bb5); /* Dark blue gradient */
     color: #fff;
     padding: 15px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 #navbar ul {
@@ -46,43 +46,55 @@ body {
 
 /* Header */
 header {
-    background: #005bb5; /* Medium blue */
-    color: #fff;
-    padding: 80px 0;
+    background: linear-gradient(135deg, #005bb5, #003f7f); /* Medium blue gradient */
+    color: black;
+    padding: 100px 0;
     text-align: center;
+    border-bottom-left-radius: 50% 20px;
+    border-bottom-right-radius: 50% 20px;
+    overflow: hidden;
 }
 
 header .profile img {
-    width: 150px; /* Smaller profile image */
-    height: 150px; /* Smaller profile image */
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     border: 5px solid #fff;
     margin-bottom: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 header h1 {
     margin: 0;
     font-size: 48px;
     font-weight: bold;
-    color: #ffd700;
 }
 
 header p {
     font-size: 24px;
     margin: 10px 0 0;
-    color: black
+}
+
+/* Main Content */
+main {
+    padding: 40px 0;
 }
 
 /* Sections */
 .container {
     width: 80%;
-    margin: auto;
+    margin: 20px auto;
     overflow: hidden;
-    padding: 40px 0;
-    background: #ffffff; /* White background for sections */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
 }
 
 .tab-content {
@@ -101,6 +113,23 @@ h2 {
     font-weight: bold;
 }
 
+/* About Me Section */
+#about {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#about p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0 auto;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
 /* Portfolio Items */
 .portfolio-items {
     display: flex;
@@ -109,19 +138,20 @@ h2 {
 }
 
 .item {
-    background: #f0f8ff; /* Light blue background for items */
+    background: #f0f8ff; /* Light blue background */
     padding: 20px;
     margin: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
     flex: 1 1 calc(33.333% - 40px);
     box-sizing: border-box;
-    border-radius: 10px;
-    transition: transform 0.3s ease;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .item:hover {
     transform: translateY(-10px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .item img {
@@ -139,6 +169,49 @@ h2 {
 .item p {
     font-size: 16px;
     color: #555;
+}
+
+/* Download Resume Section */
+.resume-pic {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pedo-file{
+    width: 850px;
+    height: 1100px;
+}
+
+.download-resume {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.download-resume h3 {
+    font-size: 24px;
+    color: #0073e6; /* Dark blue */
+    margin-bottom: 15px;
+}
+
+.resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #0073e6, #005bb5); /* Dark blue gradient */
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 25px;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.resume-button:hover {
+    background: linear-gradient(135deg, #005bb5, #003f7f); /* Medium blue gradient */
+    transform: translateY(-3px);
+}
+
+.resume-button i {
+    margin-right: 10px;
 }
 
 /* Contact Form */
@@ -159,73 +232,73 @@ form input, form textarea {
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 16px;
 }
 
 form button {
     padding: 10px;
-    background: #0073e6; /* Dark blue */
+    background: linear-gradient(135deg, #0073e6, #005bb5); /* Dark blue gradient */
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 25px;
     cursor: pointer;
     font-size: 18px;
     font-weight: bold;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
 }
 
 form button:hover {
-    background: #005bb5; /* Medium blue */
+    background: linear-gradient(135deg, #005bb5, #003f7f); /* Medium blue gradient */
+    transform: translateY(-3px);
 }
 
-/* Download Resume Section */
-.resume-pic {
+/* Social Media Links */
+.social-links {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
-.pedo-file{
-    width: 850px;
-    height: 1100px;
-}
-.download-resume {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.download-resume h3 {
-    font-size: 24px;
-    color: #0073e6; /* Dark blue */
-    margin-bottom: 15px;
-}   
-
-.resume-button {
+.social-links a {
     display: inline-block;
-    padding: 10px 20px;
-    background: #0073e6; /* Dark blue */
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background 0.3s ease;
+    margin: 0 15px;
+    font-size: 36px;
+    color: #0073e6; /* Dark blue */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.resume-button:hover {
-    background: #005bb5; /* Medium blue */
-}
-
-.resume-button i {
-    margin-right: 10px;
+.social-links a:hover {
+    color: #005bb5; /* Medium blue */
+    transform: translateY(-5px);
 }
 
 /* Footer */
+/* Footer */
 footer {
-    background: #0073e6; /* Dark blue */
-    color: #000000;
+    background: linear-gradient(135deg, #0073e6, #005bb5); /* Dark blue gradient */
+    color: black;
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 0;
     margin-top: 40px;
     font-size: 16px;
+    border-top-left-radius: 50% 20px;
+    border-top-right-radius: 50% 20px;
+    overflow: hidden;
+}
+
+.footer-social {
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 36px;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #ffd700; /* Gold color for hover */
+    transform: translateY(-5px);
 }
