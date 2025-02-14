@@ -4,6 +4,8 @@ function adjustPDFSize() {
     let screenHeight = window.innerHeight;
     let aspectRatio = screenWidth / screenHeight;
 
+    console.log(aspectRatio);
+
     if (aspectRatio < 0.75) { // Portrait Mode (more height than width)
         iframe.style.height = "60vh";
         iframe.style.width = "80vw"; // Reduce width for better fit
