@@ -201,6 +201,16 @@ h2 {
     }
 }
 
+@media (max-width: 480px) {
+    .pdf-iframe {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
 .download-resume {
     text-align: center;
     margin-top: 30px;
