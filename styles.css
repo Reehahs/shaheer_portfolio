@@ -172,15 +172,26 @@ h2 {
 }
 
 /* Download Resume Section */
-.resume-pic {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.pedo-file{
+#pdfContainer {
     width: 100%;
     height: 100vh;
+    overflow-y: auto; /* Enables scrolling for multiple pages */
+    text-align: center;
 }
+canvas {
+    display: block;
+    margin: auto;
+}
+
+/* .resume-pic {
+    text-align: center;
+    margin-top: 30px;
+} */
+
+/* .pedo-file{
+    width: 100%;
+    height: 100vh;
+} */
 
 .download-resume {
     text-align: center;
