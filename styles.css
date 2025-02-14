@@ -190,9 +190,10 @@ h2 {
 
 /* Default PDF iframe (adjusted via JavaScript) */
 .pdf-iframe {
-    width: 60%;
-    height: 80vh; /* Full viewport height by default */
-    border: none;
+    width: 80%;
+    height: 100vh;
+    /* Full viewport height by default */
+    border-width: 3px;
     transition: all 0.3s ease-in-out;
 }
 
