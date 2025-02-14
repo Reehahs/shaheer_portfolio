@@ -180,7 +180,8 @@ h2 {
 
 /* Container to center and contain the PDF */
 .pdf-container {
-    width: 100%;
+    width: 80%;
+    margin-bottom: 20px;
     display: flex;
     justify-content: center;
     align-items: center;

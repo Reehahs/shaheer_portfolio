@@ -6,7 +6,7 @@ function adjustPDFSize() {
 
     if (aspectRatio < 0.75) { // Portrait Mode (more height than width)
         iframe.style.height = "100vh";
-        iframe.style.width = "90vw"; // Reduce width for better fit
+        iframe.style.width = "100vw"; // Reduce width for better fit
     } else { // Landscape Mode (more width than height)
         iframe.style.height = "90vh"; // Slightly smaller to ensure it fits
         iframe.style.width = "100vw";
