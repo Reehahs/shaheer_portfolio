@@ -179,6 +179,47 @@ form button:hover {
     background: #005bb5; /* Medium blue */
 }
 
+/* Download Resume Section */
+.resume-pic {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pedo-file{
+    width: 850px;
+    height: 1100px;
+}
+.download-resume {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.download-resume h3 {
+    font-size: 24px;
+    color: #0073e6; /* Dark blue */
+    margin-bottom: 15px;
+}   
+
+.resume-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0073e6; /* Dark blue */
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.resume-button:hover {
+    background: #005bb5; /* Medium blue */
+}
+
+.resume-button i {
+    margin-right: 10px;
+}
+
 /* Footer */
 footer {
     background: #0073e6; /* Dark blue */
