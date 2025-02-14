@@ -1,6 +1,7 @@
 var url = 'resume_2024.pdf'; // Replace with your PDF URL
 //var url = 'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf';
 var pdfContainer = document.getElementById('pdfContainer');
+var pdfLoaded = false; // Prevents redundant loading
 
 function renderPDF(url) {
     pdfjsLib.getDocument(url).promise.then(pdf => {
@@ -20,17 +21,27 @@ function renderPDF(url) {
                 page.render(renderContext);
             });
         }
+        pdfLoaded = true; // Mark as loaded
     }).catch(error => {
         console.error("Error loading PDF:", error);
     });
 }
 
-// Load PDF when the page is fully loaded
-window.addEventListener('load', function () {
-    renderPDF(url);
+// Render PDF only when tab becomes visible
+document.addEventListener("visibilitychange", function () {
+    if (!document.hidden && !pdfLoaded) {
+        renderPDF(url);
+    }
 });
+
+// Also render on initial load (if the page is already visible)
+if (!document.hidden) {
+    renderPDF(url);
+}
 
 // Adjust PDF scaling on window resize
 window.addEventListener('resize', function () {
-    renderPDF(url);
+    if (pdfLoaded) {
+        renderPDF(url);
+    }
 });
