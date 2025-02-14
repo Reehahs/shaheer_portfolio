@@ -34,11 +34,6 @@ document.addEventListener("visibilitychange", function () {
     }
 });
 
-// Also render on initial load (if the page is already visible)
-if (!document.hidden) {
-    renderPDF(url);
-}
-
 // Adjust PDF scaling on window resize
 window.addEventListener('resize', function () {
     if (pdfLoaded) {
