@@ -185,12 +185,11 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden; /* Prevents unwanted scrolling */
 }
 
 /* Default PDF iframe (adjusted via JavaScript) */
 .pdf-iframe {
-    width: 80%;
+    width: 800px;
     height: 100vh;
     /* Full viewport height by default */
     border-width: 3px;
