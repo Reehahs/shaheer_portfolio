@@ -205,6 +205,23 @@ h2 {
     }
 }
 
+@media (max-width: 768px) {
+    .pdf-iframe {
+        width: 100vw;
+        height: 220vh;
+        border-width: 3px;
+        transition: all 0.3s ease-in-out;
+    }  
+}
+
+@media (max-width: 470px) {
+    .pdf-iframe {
+        width: 70vw;
+        height: 100vh;
+        border-width: 3px;
+        transition: all 0.3s ease-in-out;
+    }  
+}
 .download-resume {
     text-align: center;
     margin-top: 30px;
