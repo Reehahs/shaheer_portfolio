@@ -4,7 +4,7 @@ var pdfContainer = document.getElementById('pdfContainer');
 
 function renderPDF(url) {
     pdfjsLib.getDocument(url).promise.then(pdf => {
-        pdfContainer.innerHTML = ''; // Clear previous pages
+        pdfContainer.innerHTML = ''; // Clear previous content
         for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
             pdf.getPage(pageNum).then(page => {
                 var scale = pdfContainer.clientWidth / page.getViewport({ scale: 1 }).width;
@@ -20,11 +20,17 @@ function renderPDF(url) {
                 page.render(renderContext);
             });
         }
+    }).catch(error => {
+        console.error("Error loading PDF:", error);
     });
 }
 
-// Load PDF on page load
-renderPDF(url);
+// Load PDF when the page is fully loaded
+window.addEventListener('load', function () {
+    renderPDF(url);
+});
 
 // Adjust PDF scaling on window resize
-window.addEventListener('resize', () => renderPDF(url));
+window.addEventListener('resize', function () {
+    renderPDF(url);
+});
