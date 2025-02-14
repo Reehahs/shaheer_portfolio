@@ -189,13 +189,21 @@ h2 {
 
 /* Default PDF iframe (adjusted via JavaScript) */
 .pdf-iframe {
-    width: 800px;
-    height: 100vh;
+    width: 45vw;
+    height: 120vh;
     /* Full viewport height by default */
     border-width: 3px;
     transition: all 0.3s ease-in-out;
 }
 
+@media (max-aspect-ratio: 3/4) {  /* Detects Portrait Mode */
+    .pdf-iframe {
+        width: 80vw;
+        height: 60vh;
+        border-width: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+}
 
 .download-resume {
     text-align: center;
