@@ -174,7 +174,7 @@ h2 {
 /* Download Resume Section */
 #pdfContainer {
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     overflow-y: auto; /* Enables scrolling for multiple pages */
     text-align: center;
 }
